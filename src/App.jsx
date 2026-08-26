@@ -1,0 +1,29 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Layout from "./components/Layout.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Services from "./pages/Services.jsx";
+import Clients from "./pages/Clients.jsx";
+import Highlights from "./pages/Highlights.jsx";
+import Contact from "./pages/Contact.jsx";
+import NotFound from "./pages/NotFound.jsx";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/highlights" element={<Highlights />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
